@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <base href="/">
         <title>Angular2 sample</title>
-        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body class="nav-md">
+        <default-page>default page will be here.</default-page>
+        
         <script src="node_modules/core-js/client/shim.min.js"></script>
         <script src="node_modules/zone.js/dist/zone.js"></script>
         <script src="node_modules/reflect-metadata/reflect.js"></script>
@@ -10,9 +20,6 @@
         <script>window.autoBootstrap = false; </script>
         <script src="systemjs.config.js"></script>
         
-    </head>
-    <body>
-        <default-page>default page will be here.</default-page>
         <script>
             System.import("src/main").catch(function(error){console.log(error);});
         </script>
