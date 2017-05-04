@@ -8,19 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-let DefaultPage = class DefaultPage {
-    fromDefaultPageComponent() {
-        debugger;
-        console.log('From Default Page');
-    }
+const core_1 = require('@angular/core');
+let Page = class Page {
 };
-DefaultPage = __decorate([
+Page = __decorate([
     core_1.Component({
-        selector: "default-page",
-        template: "<div>test content</div>"
+        selector: 'page',
+        templateUrl: 'src/modules/common/components/page.html'
     }), 
     __metadata('design:paramtypes', [])
-], DefaultPage);
-exports.DefaultPage = DefaultPage;
-//# sourceMappingURL=defaultPage.js.map
+], Page);
+exports.Page = Page;
+//# sourceMappingURL=page.js.map

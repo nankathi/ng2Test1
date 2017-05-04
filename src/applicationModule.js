@@ -14,12 +14,14 @@ const router_1 = require('@angular/router');
 const forms_1 = require("@angular/forms");
 const http_1 = require('@angular/http');
 const defaultPage_1 = require("../resources/theme/gentella/defaultPage");
+const commonModule_1 = require('./modules/common/commonModule');
+const users_1 = require("../src/modules/security/user/users");
+const editUser_1 = require('../src/modules/security/user/editUser');
+const userService_1 = require('./modules/security/user/userService');
 let routes = [
-    // {path:'',redirectTo:'security',pathMatch:'full'},
-    // {path:'security',loadChildren:'src/modules/security/securityModule#SecurityModule'}
-    { path: 'default', component: defaultPage_1.DefaultPage },
-    { path: '', redirectTo: 'default', pathMatch: 'full' },
-    { path: '', redirectTo: 'default', pathMatch: 'full' }
+    { path: 'users', component: users_1.Users },
+    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    { path: 'users/:id', component: editUser_1.EditUser }
 ];
 // const ModuleNames = {
 //     Security:"security"
@@ -30,9 +32,9 @@ let ApplicationModule = class ApplicationModule {
 };
 ApplicationModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(routes)],
-        exports: [http_1.HttpModule],
-        declarations: [defaultPage_1.DefaultPage],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, commonModule_1.AppCommonModule, router_1.RouterModule.forRoot(routes)],
+        declarations: [defaultPage_1.DefaultPage, users_1.Users, editUser_1.EditUser],
+        providers: [userService_1.UserService],
         bootstrap: [defaultPage_1.DefaultPage],
         schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
     }), 
